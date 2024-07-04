@@ -1,14 +1,16 @@
 int tam = 51;
+int filas = 30;
+int columnas = 30;
 int espacio = 15;
 color colorBlanco = color(255);
 int tiempoDeColor = 0;
-int mov ;
 boolean cambioDeColor = false;
 
-void grillas (int filas, int columnas) {
+void grillas () {
   //repetición de las filas
   for (int y = 0; y < filas; y++) {
     //espacio en X de cada cuadrado
+    int mov;
     if ((y / 2) % 2 == 0) {
       mov = (y % 2) * espacio;
     } else {
@@ -48,29 +50,33 @@ void cambioDeColor() {
 }
 
 
-int tamano (int tamanoActual, int aumento) {
-  int nuevoTamano = tamanoActual + aumento;
-  if (nuevoTamano > 57) {
-    nuevoTamano = 57;
-  } else if (nuevoTamano < 27) {
-    nuevoTamano = 27;
+void teclaMas () {
+  if (tam < 57) {
+    tam ++;
   }
-  return nuevoTamano;
+}
+void teclaMenos () {
+  if (tam>27);
+  {
+    tam--;
+  }
 }
 
 void reinicio() {
   tam = 51;
+  filas = 30;
+  columnas = 30;
   colorBlanco = color(255);
   cambioDeColor = false;
 }
 
 
-void cambioBoolean () {
+void cambioDeColores () {
   if (cambioDeColor) {
     cambioDeColor = false;
-    colorBlanco = color(255);
-  } else {
-    cambioDeColor = true;
-    tiempoDeColor = frameCount;
+    colorBlanco = color (255);
+  }else {
+  cambioDeColor = true;
+  tiempoDeColor = frameCount;
   }
 }
